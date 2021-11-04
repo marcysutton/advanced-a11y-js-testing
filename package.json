@@ -1,0 +1,20 @@
+{
+  "name": "advanced-a11y-js-testing",
+  "version": "1.0.0",
+  "description": "A demo application for the Advanced Accessibility with JavaScript workshop",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "parcel src/index.html --host=0.0.0.0",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "Marcy Sutton",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "parcel": "latest"
+  }
+}
