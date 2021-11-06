@@ -6,7 +6,11 @@
   "main": "src/index.js",
   "scripts": {
     "start": "parcel src/index.html --host=0.0.0.0",
-    "build": "parcel build"
+    "build": "parcel build",
+    "cypress:open": "npx cypress open",
+    "cypress:run": "npx cypress run",
+    "test:e2e": "start-server-and-test start http://0.0.0.0:1234 cypress:open",
+    "test": "jest"
   },
   "keywords": [],
   "license": "ISC",
@@ -17,7 +21,40 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "parcel": "latest"
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
     "@emotion/babel-plugin": "^11.3.0",
+    "@parcel/transformer-sass": "^2.0.0",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "babel-jest": "^27.3.1",
+    "cypress": "^8.7.0",
+    "jest": "^27.3.1",
+    "jest-transform-css": "^2.1.0",
+    "parcel": "latest",
+    "react-test-renderer": "^17.0.2",
+    "start-server-and-test": "^1.14.0"
+  },
+  "jest": {
+    "globals": {
+      "NODE_ENV": "test"
+    },
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleNameMapper": {
+      "^/(.*)$": "<rootDir>/src/$1"
+    },
+    "testEnvironment": "jest-environment-jsdom",
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest",
+      ".+\\.(css|styl|less|sass|scss)$": "jest-transform-css"
+    }
   }
 }
