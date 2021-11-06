@@ -1,5 +1,5 @@
 import './styles.scss'
-import Dropdown from './components/dropdown'
+import Dropdown from './components/Dropdown'
 
 export function App() {
 	return <>
