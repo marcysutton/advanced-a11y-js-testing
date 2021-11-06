@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+#global-header {
+    border-bottom: 1px solid #ddd;
+    box-shadow: 3px 3px 6px #ddd;
+    font-family: Roboto, sans-serif;
+    width: 100%;
+
+    & > div {
+        align-items: center;
+        display: flex;
+        margin: 0 auto;
+        max-width: 1400px;
+        padding: 1em;
+    }
+
+    h1 {
+        color: inherit;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+    button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 1;
+        margin-left: auto;
+        padding: 0.5em 1em;
+    }
+}
+main {
+    padding: 1em;
+
+    section {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 3px 3px 6px #ddd;
+        margin: 0 auto;
+        max-width: 1400px;
+        overflow: auto;
+
+        header {
+            border-bottom: 2px solid #ddd;
+            padding: 2em;
+            text-align: center;
+
+            h2 {
+                font-size: 2rem;
+                margin-top: 0;
+            }
+            .stepper {
+                ol {
+                    display: flex;
+                    list-style: none;
+                    margin: 0 auto;
+                    justify-content: center;
+                    padding: 0;
+                    position: relative;
+                    width: 240px;
+
+                    &:before {
+                        border-bottom: 1px solid #ddd;
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        width: 100%;
+                    }
+                }
+                li {
+                    align-items: center;
+                    border-radius: 50%;
+                    background-color: #0075D3;
+                    color: #fff;
+                    display: flex;
+                    font-family: sans-serif;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    height: 2em;
+                    margin: 0 2.25em;
+                    padding: 0;
+                    position: relative;
+                    justify-content: center;
+                    width: 2em;
+
+                    &:first-of-type {
+                        margin-left: 0;
+                    }
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+
+                    &.inactive {
+                        background-color: #B2B3B2;
+                        
+                        span:before {
+                            content: '✓';
+                        }
+                    }
+                }
+            }
+        }
+        article {
+            padding: 2em 3em;
+
+            h3 {
+                font-size: 1.5rem;
+            }
+            p {
+                font-family: sans-serif;
+                font-weight: bold;
+            }
+            a.toggle {
+                color: #0073D3;
+                display: inline-block;
+                font-weight: bold;
+                margin: 0 1em;
+                text-decoration: none;
+            }
+            table {
+                font-family: sans-serif;
+                width: 100%;
+
+                td {
+                    padding: 7px 0px 5px 0px;
+                }
+            }
+            .credit-card {
+                border-radius: 5px;
+                box-shadow: -1px 3px 6px #ddd;
+                font-family: sans-serif;
+                font-weight: bold;
+                height: 156px;
+                margin: 1em 0;
+                width: 274px;
+
+                &:before {
+                    background-image: url('./images/card-gradient.png');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    content: '';
+                    display: block;
+                    height: 46px;
+                    width: 100%;
+                }
+                .number {
+                    align-items: center;
+                    display: flex;
+                    margin: 0.5em 2em 0.5em 1em;
+                    letter-spacing: 0.05em;
+                    justify-content: space-between;
+                    max-width: 100%;
+
+                    .asterisk {
+                        font-size: 1.5rem;
+                        line-height: 0.5;
+                    }
+                }
+                .exp {
+                    margin: 0 0 0.5em 1em;
+                }
+                .flex {
+                    align-items: center;
+                    display: flex;
+                }
+                .name {
+                    display: block;
+                    font-size: 0.75rem;
+                    letter-spacing: 0.05em;
+                    margin: 1em 1em 1em 1.2em;
+                    text-transform: uppercase;
+                }
+                .logo {
+                    background-image: url('./images/visa-logo.png');
+                    background-repeat: no-repeat;
+                    display: block;
+                    height: 25px;
+                    margin-left: auto;
+                    margin-right: 1em;
+                    width: 32px;
+                }
+            }
+            h4 {
+                font-family: sans-serif;
+                margin-bottom: 0.5em;
+            }
+            address {
+                color: #272827;
+                font-family: sans-serif;
+                font-style: normal;
+                line-height: 1.75;
+                margin-top: 0;
+            }
+            button.confirm {
+                background-color: #0075D3;
+                border: 1.5px solid #0025C5;
+                border-radius: 5px;
+                box-shadow: 0px 0px 2px #fff;
+                color: #fff;
+                margin: 2em 0;
+                padding: 1em 2em;
+                position: relative;
+            }
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    main {
+        header {
+            padding: 2em 1em;
+        }
+        section article {
+            padding: 2em;
+        }
+    }
+}
