@@ -10,6 +10,7 @@
     "cypress:open": "npx cypress open",
     "cypress:run": "npx cypress run",
     "test:e2e": "start-server-and-test start http://0.0.0.0:1234 cypress:open",
+    "test:ci": "start-server-and-test start http://0.0.0.0:1234 cypress:run",
     "test": "jest"
   },
   "keywords": [],
