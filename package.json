@@ -55,6 +55,7 @@
     "moduleNameMapper": {
       "^/(.*)$": "<rootDir>/src/$1"
     },
+    "modulePathIgnorePatterns": ["cypress"],
     "testEnvironment": "jest-environment-jsdom",
     "transform": {
       "^.+\\.(js|jsx)$": "babel-jest",
