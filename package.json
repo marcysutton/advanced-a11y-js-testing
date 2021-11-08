@@ -30,6 +30,7 @@
     "@testing-library/cypress": "^8.0.1",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
     "axe-core": "^4.3.5",
     "babel-jest": "^27.3.1",
     "cypress": "^8.7.0",
@@ -55,7 +56,13 @@
     "moduleNameMapper": {
       "^/(.*)$": "<rootDir>/src/$1"
     },
-    "modulePathIgnorePatterns": ["cypress"],
+    "modulePathIgnorePatterns": [
+      "cypress",
+      "examples"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest-setup.js"
+    ],
     "testEnvironment": "jest-environment-jsdom",
     "transform": {
       "^.+\\.(js|jsx)$": "babel-jest",
