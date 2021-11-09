@@ -1,17 +1,30 @@
+import { useRef } from 'react'
 import './styles.scss'
 import Dropdown from './components/Dropdown'
 
 export function App() {
+	const headerRef = useRef()
+	const mainRef = useRef()
+
+	const hideHeader = () => {
+		headerRef.current.remove()
+
+		mainRef.current.focus()
+	}
+
 	return <>
-		<header id="global-header">
+		<header id="global-header" ref={headerRef}>
 			<div>
 				<h1>Northwest Heart and Soul Institute</h1>
-				<button aria-label="Hide header">
+				<button
+					aria-label="Hide header"
+					onClick={() => { hideHeader() }}
+				>
 					X
 				</button>
 			</div>
 		</header>
-		<main>
+		<main data-testid="main" ref={mainRef} tabIndex="-1">
 			<section>
 				<header>
 					<h2>Make a Payment</h2>
