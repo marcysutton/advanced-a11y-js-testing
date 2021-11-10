@@ -3,16 +3,16 @@ import Dropdown from './components/Dropdown'
 
 export function App() {
 	return <>
-		<header id="global-header">
+		<div id="global-header">
 			<div>
-				<h1>Northwest Heart and Soul Institute</h1>
-				<button aria-label="Hide header">
+				<h2 className="header-header">Northwest Heart and Soul Institute</h2>
+				<div aria-label="Hide header" className="header-button">
 					X
-				</button>
+				</div>
 			</div>
-		</header>
-		<main>
-			<section>
+		</div>
+		<div id="main">
+			<div className="section">
 				<header>
 					<h2>Make a Payment</h2>
 					<div className="stepper">
@@ -85,9 +85,9 @@ export function App() {
 						BELLINGHAM, WA 98229
 					</address>
 
-					<button className="confirm">Confirm payment</button>
+					<div className="confirm">Confirm payment</div>
 				</article>
-			</section>
-		</main>
+			</div>
+		</div>
 	</>
 }

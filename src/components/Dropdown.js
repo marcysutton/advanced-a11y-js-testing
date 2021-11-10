@@ -3,12 +3,14 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
 const StyledDropdown = styled.div`
-    button {
+    .dropdown-btn {
         background-color: transparent;
         border: 2px solid #ddd;
         border-radius: 5px;
         color: #585958;
         cursor: pointer;
+        display: inline-block;
+        font-family: inherit;
         padding: 0.5em 1em;
 
         &:before {
@@ -19,16 +21,16 @@ const StyledDropdown = styled.div`
             transform: rotate(90deg);
         }
     }
-    div {
+    .dropdown-content {
         display: none;
     }
     &.active {
-        button {
+        .dropdown-btn {
             &:before {
                 transform: rotate(-90deg);
             }
         }
-        div {
+        .dropdown-content {
             display: block;
         }
     }
@@ -38,14 +40,12 @@ const Dropdown = ({buttonName = '', children}) => {
 
     return (
         <StyledDropdown className={active === true ? 'active' : ''}>
-            <button
-                aria-haspopup="true"
-                aria-expanded="false"
+            <div
                 className="dropdown-btn"
                 data-testid="dropdown-btn"
                 onClick={() => { setActive(!active) }}>
                 {buttonName}
-            </button>
+            </div>
             <div className="dropdown-content">
                 {children}
             </div>
