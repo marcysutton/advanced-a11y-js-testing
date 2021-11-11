@@ -1,7 +1,9 @@
 import React from 'react'
 import {render, screen, getByText} from '@testing-library/react'
+import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
-import Dropdown  from './Dropdown'
+
+import Dropdown  from '../Dropdown'
 
 describe('Dropdown', () => {
     it('labels the dropdown button', () => {
@@ -12,19 +14,19 @@ describe('Dropdown', () => {
 
         expect(buttonText).toBeInTheDocument()
     })
-    it('can be operated with the keyboard', () =>  {
+    it('can be operated with the keyboard', () => {
         render(<Dropdown buttonName="Settings" />)
 
+        const dropdownWrapper = screen.getByTestId('dropdown-wrapper')
         const dropdownButton = screen.getByTestId('dropdown-btn')
+
         userEvent.tab()
         expect(dropdownButton).toHaveFocus()
 
         userEvent.click(dropdownButton)
-
         expect(dropdownButton).toHaveAttribute('aria-expanded', 'true')
 
-        userEvent.type(dropdownButton, '{esc}', {skipClick: true})
-
+        userEvent.type(dropdownWrapper, '{esc}', {skipClick: true})
         expect(dropdownButton).toHaveAttribute('aria-expanded', 'false')
     })
 })
