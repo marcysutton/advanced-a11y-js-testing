@@ -213,6 +213,16 @@ html, body {
         }
     }
 }
+#footer {
+    align-items: center;
+    display: flex;
+    font-family: sans-serif;
+    padding: 1em;
+
+    img {
+        max-width: 140px;
+    }
+}
 @media screen and (max-width: 480px) {
     #main {
         #global-header {

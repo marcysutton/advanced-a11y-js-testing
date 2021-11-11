@@ -1,5 +1,6 @@
 import './styles.scss'
 import Dropdown from './components/Dropdown'
+import logoImage from './images/health-services-logo.png'
 
 export function App() {
 	return <>
@@ -88,6 +89,9 @@ export function App() {
 					<div className="confirm">Confirm payment</div>
 				</article>
 			</div>
+		</div>
+		<div id="footer">
+			&copy; 2021 <a href="#" className="company-logo"><img src={logoImage} /></a>
 		</div>
 	</>
 }
