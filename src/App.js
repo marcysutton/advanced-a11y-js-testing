@@ -1,19 +1,28 @@
+import React, {useRef} from 'react'
 import './styles.scss'
 import Dropdown from './components/Dropdown'
 import logoImage from './images/health-services-logo.png'
 
 export function App() {
+	const headerRef = useRef()
+	const mainRef = useRef()
+
+	const hideHeader = () => {
+		headerRef.current.remove()
+
+		mainRef.current.focus()
+	}
 	return <>
-		<div id="global-header">
+		<header id="global-header" ref={headerRef}>
 			<div>
-				<h2 className="header-header">Northwest Heart and Soul Institute</h2>
-				<div aria-label="Hide header" className="header-button">
+				<h1 className="header-header">Northwest Heart and Soul Institute</h1>
+				<button aria-label="Hide header" className="header-button" onClick={()=>{ hideHeader() }}>
 					X
-				</div>
+				</button>
 			</div>
-		</div>
-		<div id="main">
-			<div className="section">
+		</header>
+		<main id="main" data-testid="main" ref={mainRef} tabIndex="-1">
+			<section className="section">
 				<header>
 					<h2>Make a Payment</h2>
 					<div className="stepper">
@@ -88,10 +97,10 @@ export function App() {
 
 					<div className="confirm">Confirm payment</div>
 				</article>
-			</div>
-		</div>
-		<div id="footer">
-			&copy; 2021 <a href="#" className="company-logo"><img src={logoImage} /></a>
-		</div>
+			</section>
+		</main>
+		<footer id="footer">
+			&copy; 2021 <a href="#" className="company-logo"><img src={logoImage} alt="Health Services" /></a>
+		</footer>
 	</>
 }
